@@ -16,7 +16,11 @@ int pop(){
 }
 
 void main(){
-    char postfix[max]="12*34*+5-";
+    char postfix[max];
+    // "12*34*+5-"
+    printf("Enter the postfix expression:");
+    scanf("%s",postfix);
+
     int result=0,a,b;   
 
     for(int i=0;i<strlen(postfix);i++){
