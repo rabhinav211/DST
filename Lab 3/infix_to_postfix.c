@@ -28,9 +28,14 @@ int precedence(char a){
 
 
 void main(){
-    char infix[size]="A+(B*C-(D/E^F)*G)*H",postfix[size];
+    char infix[size],postfix[size];
+
+    printf("Enter infix expression:");
+    scanf("%s",infix);
     int len=strlen(infix);
     int j=0;
+    printf("Char\tStack\tpostfix\n");
+
     for(int i=0;i<len;i++){
         if(infix[i]=='(')
             push('(');
@@ -55,9 +60,9 @@ void main(){
                 }
             }
         }
-        // stack[top+1]='\0';
-        // postfix[j]='\0';
-        // printf("%c\t%s\t%s\n",infix[i],stack,postfix);
+        stack[top+1]='\0';
+        postfix[j]='\0';
+        printf("%c\t%s\t%s\n",infix[i],stack,postfix);
     }
     while(top!=-1){
         postfix[j++]=pop();
